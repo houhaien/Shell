@@ -10,11 +10,12 @@
 #include <sys/types.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <sys/file.h>
 char sum_file[] = "./sum.txt";
 char now_file[] = "./now.txt";
 
-#define MAXN 100
-#define INS 1
+#define MAXN 10000
+#define INS 20
 
 void get_num(char *filename, int *num) {
     
@@ -56,6 +57,8 @@ int main() {
     }
     if (pid == 0) {
         while(1) {
+            FILE * fp = fopen(sum_file, "r");
+            flock(fp->_fileno, LOCK_EX);
             int sum = 0;
             int cnt = 0;
             get_num(sum_file, &sum);
@@ -65,6 +68,7 @@ int main() {
             set_num(now_file, cnt + 1);
             set_num(sum_file, sum);
             //printf("%d\n", sum);
+            flock(fp->_fileno, LOCK_UN);
         }
         exit(0);
     }
@@ -77,7 +81,7 @@ int main() {
 
     get_num(sum_file, &zsum);
     printf("%d\n", zsum);
-    printf("%d\n",x);
+    //printf("%d\n",x);
     //set_num(now_file, 1111);
     return 0;
 }

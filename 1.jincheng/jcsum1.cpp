@@ -17,7 +17,7 @@ char sum_file[] = "./sum.txt";
 char now_file[] = "./now.txt";
 
 #define MAXN 10000
-#define INS 10
+#define INS 20
 
 void getnum(char *filename, int *num, FILE *fp) {
     char *line = NULL;
@@ -61,8 +61,9 @@ int main() {
             fclose(fps);
             fclose(fpn);
             cnt ++;
-            if(cnt > MAXN) break;
             sum += cnt;
+            printf("now = %d : sum = %d\n", cnt, sum);
+            if(cnt >= MAXN) break;
             fps = fopen(sum_file, "w");
             setnum(sum_file, sum, fps);
             fpn = fopen(now_file, "w");
