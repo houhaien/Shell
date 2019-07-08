@@ -1,8 +1,8 @@
 /*************************************************************************
 	> File Name: common.h
-	> Author: suziteng
-	> Mail: 253604653@qq.com
-	> Created Time: 2019年06月20日 星期四 18时26分07秒
+	> Author: houhaien 
+	> Mail: github.com/houhaien 
+	> Created Time: 2019年07月07日 星期日 10时35分56秒
  ************************************************************************/
 
 #ifndef _COMMON_H

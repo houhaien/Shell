@@ -1,8 +1,8 @@
 /*************************************************************************
-	> File Name: common.c
-	> Author: suziteng
-	> Mail: 253604653@qq.com
-	> Created Time: 2019年06月26日 星期三 18时58分41秒
+	> File Name: common.h
+	> Author: houhaien 
+	> Mail: github.com/houhaien 
+	> Created Time: 2019年07月07日 星期日 10时25分06秒
  ************************************************************************/
 
 #include "common.h"
